@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Chivo&family=Poppins:wght@300;400;500;600;700&family=Rosario:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>Trinity Appliances | Dashboard</title>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+
+                <img src="../static/images/logo.jpg" height="100" width="100"/></div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="dashboard.html">Home</a></li>
+                    <li><a href="/dashboard/list">Products</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+
+            <a href="cart.html"><img src="../static/images/cart.png" height="30" width="30"/></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1>Choose your own Brand<br>A New Product!</h1>
+                <p>All the appliances are geniune<br>with geniune service</p>
+                <a href="" class="btn">Explore Now &#8594;</a>
+            </div>
+
+            <div class="col-2">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- featured categories -->
+
+<div class="categories">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <img src="../static/images/tv.png">
+            </div>
+            <div class="col-3">
+                <img src="../static/images/fridge.jpg">
+            </div>
+            <div class="col-3">
+                <img src="../static/images/ac.jpg">
+            </div>
+    </div>
+</div>
+</div>
+
+<!-- featured products -->
+
+<div class="small-container">
+    <h2 class="title">Latest Products</h2>
+    <div class="row" >
+        <div class="col-4" style="margin-right: 10px" th:each="product:${products}">
+            <img th:src="'data:fridge.jpg;base64,'+${product.productImageBase64}">
+            <img src="../static/images/fridge.jpg">
+            <h4 th:text="${product.productName}">lg 500 liter Refrigerator</h4>
+            <p th:text="${product.productPrice}">$500.00</p>
+        </div>
+</div>
+</div>
+
+
+<!-- offer -->
+
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="../static/images/tv.png" class="offer-img" width="300" height="200">
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Available on trinity</p>
+                    <h1>Smart Band 4</h1>
+                    <small>Dimensions · Display. FHD. Resolution：1920×1080. Viewing Angle：178° · Speaker. Powerful speakers. 2×10W 6ohm · Socket. Multiple ports. USB：2.0×2. HDMI：3<br> so everything is clear as can be.<br></small>
+                    <a href="" class="btn">Buy Now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- testimonial -->
+
+<div class="testimonial">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <img src="../static/images/user-1.png">
+                <h3>Sean Parker</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <img src="../static/images/user-2.png">
+                <h3>Mike Smith</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <img src="../static/images/user-3.png">
+                <h3>Mabel Joe</h3>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- brands -->
+
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="../static/images/logo-godrej.png">
+            </div>
+            <div class="col-5">
+                <img src="../static/images/logo-oppo.png">
+            </div>
+
+            <div class="col-5">
+                <img src="../static/images/logo-paypal.png">
+            </div>
+            <div class="col-5">
+                <img src="../static/images/logo-philips.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download Our App for Android and IOS Mobile Phone.</p>
+                <div class="app-logo">
+                    <img src="../static/images/play-store.png">
+                    <img src="../static/images/app-store.png">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="../static/images/logo.jpg">
+                <p>Our Purpouse is to Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2020 - Trinity Appliance</p>
+    </div>
+</div>
+
+<!-- js for toggle menu -->
+
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px")
+        {
+            MenuItems.style.maxHeight = "200px";
+        }
+        else 
+        {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+</body>
+</html>
